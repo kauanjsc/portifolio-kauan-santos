@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github, Star, TrendingUp, Shield, BarChart2, Layers } from 'lucide-react';
 
@@ -12,8 +12,6 @@ type Project = {
   longDescription: string;
   tags: string[];
   icon: React.ReactNode;
-  color: string;
-  gradient: string;
   featured?: boolean;
   deploy?: string;
   github?: string;
@@ -23,14 +21,12 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Sistema de Acessibilidade Urbana',
-    description: 'TCC — sistema de gestão e controle de acesso com RFID e dashboard.',
+    title: 'Acessibilidade Urbana',
+    description: 'Meu TCC: Sistema de mapeamento colaborativo e gestão com dashboard.',
     longDescription:
-      'Sistema web para mapeamento colaborativo de acessibilidade urbana utilizando Vue.js, Leaflet e Design System Gov.br. (TCC)',
-    tags: ['Vue.js', 'Node.js', 'FastAPI', 'PostgreSQL'],
+      'Projeto desenvolvido 100% por mim de ponta a ponta (Full Stack). Sistema web para mapeamento de acessibilidade utilizando Vue.js, FastAPI, PostgreSQL e gestão de acesso via RFID.',
+    tags: ['Vue.js', 'FastAPI','Tailwind','PostgreSQL', 'Leaflet'],
     icon: <Shield className="w-6 h-6" />,
-    color: 'from-brand-500/20 to-violet-500/10',
-    gradient: 'from-brand-500 to-violet-500',
     featured: true,
     deploy: 'https://teresina-acessivel-api.onrender.com',
     github: 'https://github.com/kauanjsc/sistema-acessibilidade-urbana',
@@ -38,59 +34,53 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'GSUAS THE',
-    description: 'Sistema que oferece aos cidadãos a possibilidade de acessar serviços de assistência social da Prefeitura de forma prática, rápida e segura, promovendo inclusão social e mais autonomia no dia a dia.',
+    title: 'BaseSUAS',
+    description: 'Cadastro de Trabalhadores e Serviços Socioassistenciais de Teresina.',
     longDescription:
-      'ferramenta central de gestão para os serviços da SEMCASPI, integrando dados do BaseSuas (Projeto em equipe - Atuei como Front-end, codigo bloqueado por ser um sistema da prefeitura - GitLab privado)',
-    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'JWT', 'Prisma', 'Chart.js'],
-    icon: <TrendingUp className="w-6 h-6" />,
-    color: 'from-emerald-500/20 to-teal-500/10',
-    gradient: 'from-emerald-500 to-teal-500',
-    featured: true,
-    deploy: 'https://s64sdf26-8080.brs.devtunnels.ms/',
-    github: 'https://git.teresina.pi.gov.br/kauanjsc/gsuas-the',
-    status: 'Concluído',
+      'Sistema integrado ao GSUAS para gerenciar dados da rede socioassistencial. Contribuí focado exclusivamente no desenvolvimento do Front-End (Código fechado no GitLab).', 
+    tags: ['Vue.js', 'FastAPI', 'TypeScript', 'Tailwind',],
+    icon: <BarChart2 className="w-6 h-6" />,
+    deploy: 'https://basesuas.teresina.pi.gov.br/',
+    github: 'https://git.teresina.pi.gov.br/kauanjsc',
+    status: 'Em Produção',
   },
   {
     id: 3,
-    title: 'Projeto GoBody',
-    description: 'API escalável com autenticação completa, roles e refresh tokens.',
+    title: 'GoBody',
+    description: 'Marketplace fitness para busca de academias e reserva de aulas.',
     longDescription:
-      'Prjeto MVP com a ideia de Marketplace para a area fitness, onde o usuário pode se cadastrar, criar um perfil, listar academias próximas e reservar aulas. Atuei como Front-end (Projeto em equipe)',
-    tags: [ 'Next.js ', 'Node.js', 'TypeScript', 'Integrações Swagger' ],
+      'Projeto MVP de uma plataforma fitness com API escalável. Contribuí no desenvolvimento do Front-End em colaboração com a equipe.',
+    tags: ['Next.js', 'FastAPI', 'TypeScript', 'Tailwind', 'PostgreSQL',],
     icon: <Layers className="w-6 h-6" />,
-    color: 'from-orange-500/20 to-amber-500/10',
-    gradient: 'from-orange-500 to-amber-500',
     deploy: 'https://faisca-massacre.vercel.app/',
     github: 'https://github.com/projetonickjumper-byte/GoBody-Front-end',
     status: 'Em Desenvolvimento',  
   },
   {
     id: 4,
-    title: 'BaseSuas',
-    description: 'Sistema de Cadastro de Trabalhadores e Serviços Socioassistencias do Município de Teresina/PI.',
+    title: 'GSUAS THE',
+    description: 'Sistema da Prefeitura de Teresina para acesso a serviços de assistência social.',
     longDescription:
-      'BaseSUAS tem por finalidade coletar, processar e gerenciar dados sobre a rede socioassistencial no âmbito do Município de Teresina/PI, além de viabilizar o acesso a outros sistemas municipais, por meio de uma integração com o Sistema de Gestão do SUAS de Teresina (GSUAS THE) - (Projeto em equipe - Atuei como Front-end, codigo bloqueado por ser um sistema da prefeitura - GitLab privado)', 
-    tags: ['Vue.js', 'TypeScript', 'Tailwind', 'Axios', 'Pinia', 'Vite'],
-    icon: <BarChart2 className="w-6 h-6" />,
-    color: 'from-pink-500/20 to-rose-500/10',
-    gradient: 'from-pink-500 to-rose-500',
-    deploy: 'https://basesuas.teresina.pi.gov.br/',
-    github: 'https://git.teresina.pi.gov.br/kauanjsc',
-    status: 'Em Produção',
+      'Ferramenta central de gestão para os serviços da SEMCASPI. Atuei no desenvolvimento Full Stack (Front-End e Back-End) neste projeto em equipe (Código fechado no GitLab da Prefeitura).',
+    tags: ['Vue.js', 'FastAPI', 'Storybook (PMT)','TypeScript', 'PostgreSQL',],
+    icon: <TrendingUp className="w-6 h-6" />,
+    featured: true,
+    deploy: 'https://s64sdf26-8080.brs.devtunnels.ms/',
+    github: 'https://git.teresina.pi.gov.br/kauanjsc/gsuas-the',
+    status: 'Concluído',
   },
 ];
 
 function StatusBadge({ status }: { status: Project['status'] }) {
   const colors = {
-    'Em Produção': 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
-    'Em Desenvolvimento': 'bg-amber-500/15 text-amber-400 border-amber-500/30',
-    'Concluído': 'bg-brand-500/15 text-brand-400 border-brand-500/30',
+    'Em Produção': 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+    'Em Desenvolvimento': 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+    'Concluído': 'bg-brand-500/10 text-brand-600 dark:text-brand-400 border-brand-500/20',
   };
 
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium border ${colors[status]}`}>
-      <span className={`w-1.5 h-1.5 rounded-full ${status === 'Em Produção' ? 'bg-emerald-400 animate-pulse' : status === 'Em Desenvolvimento' ? 'bg-amber-400 animate-pulse' : 'bg-brand-400'}`} />
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-mono font-medium border ${colors[status]}`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${status === 'Em Produção' ? 'bg-emerald-500 animate-pulse' : status === 'Em Desenvolvimento' ? 'bg-amber-500 animate-pulse' : 'bg-brand-500'}`} />
       {status}
     </span>
   );
@@ -107,69 +97,54 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className={`card-project group ${project.featured ? 'md:col-span-1' : ''}`}
+      className="group relative flex flex-col h-full bg-neutral-50 dark:bg-neutral-900/40 rounded-2xl border border-neutral-200 dark:border-neutral-800 overflow-hidden hover:border-brand-500/30 transition-colors duration-300"
     >
-      {/* Gradient top bar */}
-      <div className={`h-1 w-full bg-gradient-to-r ${project.gradient} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-400 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      {/* Hover glow effect */}
-      <div
-        className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 
-                    group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
-      />
-
-      <div className="relative p-6 flex flex-col h-full gap-4">
-        {/* Header */}
-        <div className="flex items-start justify-between">
-          <div
-            className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} 
-                        border border-white/10 flex items-center justify-center
-                        text-gray-600 dark:text-gray-300 group-hover:scale-110 transition-transform duration-300`}
-          >
+      <div className="p-6 flex flex-col h-full gap-5 relative z-10">
+        <div className="flex items-start justify-between gap-4">
+          <div className="w-12 h-12 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-105 transition-transform duration-300 shadow-sm">
             {project.icon}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col items-end gap-2">
+            <StatusBadge status={project.status} />
             {project.featured && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[10px] font-mono">
-                <Star className="w-2.5 h-2.5" /> Destaque
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 text-[10px] uppercase tracking-wider font-mono">
+                <Star className="w-3 h-3 text-brand-500" /> Destaque
               </span>
             )}
-            <StatusBadge status={project.status} />
           </div>
         </div>
 
-        {/* Content */}
         <div className="flex-1">
-          <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:gradient-text transition-all duration-300">
+          <h3 className="font-display text-xl font-bold text-neutral-900 dark:text-white mb-2">
             {project.title}
           </h3>
-          <p className="font-body text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+          <p className="font-body text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed min-h-[60px]">
             {hovered ? project.longDescription : project.description}
           </p>
         </div>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 pt-2">
           {project.tags.map((tag) => (
-            <span key={tag} className="tech-badge">
+            <span key={tag} className="px-2.5 py-1 text-[11px] font-mono font-medium rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700">
               {tag}
             </span>
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3 pt-2 border-t border-white/5">
+        <div className="flex items-center gap-3 pt-4 mt-auto border-t border-neutral-200 dark:border-neutral-800">
           {project.deploy && (
             <motion.a
               href={project.deploy}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-xs py-2 px-4 flex-1 justify-center"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium transition-colors"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <ExternalLink className="w-3.5 h-3.5" />
-              Ver Projeto
+              <ExternalLink className="w-4 h-4" />
+              Acessar
             </motion.a>
           )}
           {project.github && (
@@ -177,12 +152,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline text-xs py-2 px-4 flex-1 justify-center"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-transparent border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-sm font-medium transition-colors"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Github className="w-3.5 h-3.5" />
-              Ver Código
+              <Github className="w-4 h-4" />
+              Repositório
             </motion.a>
           )}
         </div>
@@ -195,49 +170,41 @@ export default function Projects() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-900/[0.03] to-transparent dark:via-brand-500/[0.03] pointer-events-none" />
-
+    <section id="projects" className="py-32 relative bg-white dark:bg-neutral-950">
       <div className="section-container" ref={ref}>
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-4"
+          className="mb-12"
         >
-          <p className="section-label"> projetos</p>
-          <div className="flex items-end justify-between flex-wrap gap-4">
-            <h2 className="section-title">
-              O que eu <span className="gradient-text">construí ou fiz parte </span>
-            </h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <p className="font-mono text-sm text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">
+                Portfólio
+              </p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-neutral-950 dark:text-white">
+                Projetos 
+              </h2>
+            </div>
+            
             <a
-              href="https://github.com/kauansantos"
+              href="https://github.com/kauanjsc"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline text-sm py-2 px-4"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-500/30 transition-all font-medium text-sm w-fit"
             >
               <Github className="w-4 h-4" />
-              Ver GitHub
+              Ver mais no GitHub
             </a>
           </div>
+          
+          <p className="font-body text-neutral-600 dark:text-neutral-400 mt-6 max-w-2xl leading-relaxed">
+            Soluções que desenvolvi de forma independente ou em equipe. Passe o mouse sobre os cards para ver mais detalhes sobre a minha atuação.
+          </p>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.2 }}
-          className="font-body text-gray-500 dark:text-gray-400 mb-12 max-w-2xl"
-        >
-          Projetos reais desenvolvidos com foco em boas práticas, código limpo e soluções que resolvem
-          problemas reais. Passe o mouse para ver mais detalhes.
-        </motion.p>
-
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

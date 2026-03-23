@@ -15,96 +15,72 @@ import {
 
 const differentials = [
   {
-    icon: <Globe className="w-6 h-6" />,
-    title: 'Full Stack Completo',
+    icon: <Globe className="w-5 h-5" />,
+    title: 'Visão Full Stack',
     description:
-      'Domínio do ciclo completo de desenvolvimento — APIs, banco de dados, front-end e deploy.',
-    color: 'from-brand-500/20 to-brand-600/10',
-    border: 'border-brand-500/30',
-    iconColor: 'text-brand-400',
+      'Compreensão do ciclo de desenvolvimento integrado, construindo desde a estrutura da API até a interface do usuário.',
   },
   {
-    icon: <Database className="w-6 h-6" />,
-    title: 'Modelagem de Dados',
+    icon: <Database className="w-5 h-5" />,
+    title: 'Banco de Dados',
     description:
-      'Experiência com PostgreSQL, modelagem relacional, queries otimizadas e uso de ORMs como Prisma.',
-    color: 'from-indigo-500/20 to-indigo-600/10',
-    border: 'border-indigo-500/30',
-    iconColor: 'text-indigo-400',
+      'Experiência prática com PostgreSQL, modelagem relacional estruturada e uso de ORMs como Prisma.',
   },
   {
-    icon: <ShieldCheck className="w-6 h-6" />,
-    title: 'APIs Seguras',
+    icon: <ShieldCheck className="w-5 h-5" />,
+    title: 'APIs e Segurança',
     description:
-      'Implementação de autenticação JWT, refresh tokens, controle de acesso e proteção de rotas.',
-    color: 'from-emerald-500/20 to-emerald-600/10',
-    border: 'border-emerald-500/30',
-    iconColor: 'text-emerald-400',
+      'Implementação de rotas e autenticação via JWT no back-end, garantindo acesso seguro aos dados.',
   },
   {
-    icon: <Gauge className="w-6 h-6" />,
-    title: 'Foco em Performance',
+    icon: <Gauge className="w-5 h-5" />,
+    title: 'Acessibilidade & UI',
     description:
-      'Otimização de renderização, lazy loading, code splitting e melhores práticas de web performance.',
-    color: 'from-orange-500/20 to-orange-600/10',
-    border: 'border-orange-500/30',
-    iconColor: 'text-orange-400',
+      'Foco em interfaces limpas, semânticas e acessíveis, priorizando a experiência de todos os usuários.',
   },
   {
-    icon: <Boxes className="w-6 h-6" />,
+    icon: <Boxes className="w-5 h-5" />,
     title: 'Componentização',
     description:
-      'Desenvolvimento de interfaces com componentes reutilizáveis, design systems e Storybook.',
-    color: 'from-pink-500/20 to-pink-600/10',
-    border: 'border-pink-500/30',
-    iconColor: 'text-pink-400',
+      'Desenvolvimento de layouts modulares e reutilizáveis utilizando Vue.js, Next.js e Tailwind CSS.',
   },
   {
-    icon: <GitBranch className="w-6 h-6" />,
-    title: 'Boas Práticas',
+    icon: <GitBranch className="w-5 h-5" />,
+    title: 'Versionamento',
     description:
-      'Git flow, commits semânticos, code review, testes unitários e documentação de código.',
-    color: 'from-amber-500/20 to-amber-600/10',
-    border: 'border-amber-500/30',
-    iconColor: 'text-amber-400',
+      'Uso diário de Git e GitLab, mantendo fluxos organizados com branches, commits descritivos e merge requests.',
   },
   {
-    icon: <Workflow className="w-6 h-6" />,
+    icon: <Workflow className="w-5 h-5" />,
     title: 'Integração Front + Back',
     description:
-      'Conexão fluida entre camadas com React Query, gerenciamento de estado e tratamento de erros.',
-    color: 'from-violet-500/20 to-violet-600/10',
-    border: 'border-violet-500/30',
-    iconColor: 'text-violet-400',
+      'Conexão eficiente entre as camadas, consumindo APIs RESTful de forma fluida e gerenciando o estado da aplicação.',
   },
   {
-    icon: <Cpu className="w-6 h-6" />,
-    title: 'Aprendizado Contínuo',
+    icon: <Cpu className="w-5 h-5" />,
+    title: 'Evolução Contínua',
     description:
-      'Sempre atualizado com novas tecnologias, padrões de arquitetura e tendências do mercado.',
-    color: 'from-cyan-500/20 to-cyan-600/10',
-    border: 'border-cyan-500/30',
-    iconColor: 'text-cyan-400',
+      'Sempre atualizando meus conhecimentos técnicos e buscando aplicar as melhores práticas da engenharia de software.',
   },
 ];
 
 const timeline = [
   {
     period: '2023 — Presente',
-    title: 'Desenvolvimento Full Stack',
-    description: 'Projetos pessoais e freelance com foco em Vue.js, Next.js e FastAPI',
-    tag: 'Freelance, estudos & estagios',
+    title: 'Desenvolvimento Web',
+    description: 'Atuação prática na construção de aplicações e sistemas reais utilizando Vue.js, Next.js e FastAPI.',
+    tag: 'Prática & Projetos',
   },
   {
     period: '2022 — 2023',
-    title: 'Front-end & React',
-    description: 'Aprofundamento em React, TypeScript, e ecossistema frontend',
+    title: 'Fundamentos Front-End',
+    description: 'Aprofundamento em lógica de programação, JavaScript, TypeScript e ecossistema web.',
     tag: 'Estudo',
   },
   {
-    period: '2021 —  Presente',
+    period: '2021 — Presente',
     title: 'Ciência da Computação',
-    description: 'Graduação com foco em algoritmos, banco de dados e engenharia de software',
+    description: 'Graduação com foco em algoritmos, banco de dados e engenharia de software.',
     tag: 'Universidade Estadual do Piauí',
   },
 ];
@@ -113,7 +89,7 @@ export default function Experience() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="experience" className="py-32 relative">
+    <section id="experience" className="py-32 relative bg-neutral-50 dark:bg-neutral-900/20">
       <div className="section-container" ref={ref}>
         {/* Header */}
         <motion.div
@@ -122,12 +98,14 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="section-label"> experiência</p>
-          <h2 className="section-title">
-            Meus <span className="gradient-text">Diferenciais</span>
+          <p className="font-mono text-sm text-brand-600 dark:text-brand-400 tracking-widest uppercase mb-2">
+            Habilidades
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-neutral-950 dark:text-white">
+            O que eu <span className="bg-gradient-to-r from-brand-400 to-brand-600 bg-clip-text text-transparent">Entrego</span>
           </h2>
-          <p className="font-body text-gray-500 dark:text-gray-400 mt-3 max-w-xl">
-            Habilidades e características que me destacam como desenvolvedor Full Stack.
+          <p className="font-body text-neutral-600 dark:text-neutral-400 mt-4 max-w-xl leading-relaxed">
+            Áreas de conhecimento e práticas de desenvolvimento que venho consolidando ao longo da minha trajetória acadêmica e profissional.
           </p>
         </motion.div>
 
@@ -139,17 +117,15 @@ export default function Experience() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.07, duration: 0.5 }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className={`relative p-5 rounded-2xl bg-gradient-to-br ${item.color} 
-                         border ${item.border} group cursor-default`}
+              className="group relative p-6 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 hover:border-brand-500/30 transition-colors duration-300"
             >
-              <div className={`${item.iconColor} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div className="w-10 h-10 rounded-lg bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-4 group-hover:scale-110 group-hover:bg-brand-50 dark:group-hover:bg-brand-900/20 transition-all duration-300">
                 {item.icon}
               </div>
-              <h3 className="font-display text-sm font-bold text-gray-800 dark:text-white mb-2">
+              <h3 className="font-display text-sm font-bold text-neutral-900 dark:text-white mb-2">
                 {item.title}
               </h3>
-              <p className="font-body text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              <p className="font-body text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 {item.description}
               </p>
             </motion.div>
@@ -160,37 +136,39 @@ export default function Experience() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.4 }}
         >
-          <h3 className="font-display text-xl font-bold text-gray-800 dark:text-white mb-10">
+          <h3 className="font-display text-2xl font-bold text-neutral-900 dark:text-white mb-10">
             Trajetória
           </h3>
           <div className="relative">
             {/* Line */}
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-brand-500/50 via-brand-500/20 to-transparent ml-[7px] hidden md:block" />
+            <div className="absolute left-0 top-2 bottom-2 w-px bg-neutral-200 dark:bg-neutral-800 ml-[7.5px] hidden md:block" />
 
-            <div className="space-y-10">
+            <div className="space-y-12">
               {timeline.map((item, i) => (
                 <motion.div
                   key={item.title}
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.6 + i * 0.15 }}
+                  transition={{ delay: 0.5 + i * 0.15 }}
                   className="md:pl-10 relative"
                 >
                   {/* Dot */}
-                  <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full bg-brand-600 border-2 border-brand-400 shadow-glow hidden md:block" />
+                  <div className="absolute left-0 top-1.5 w-[16px] h-[16px] rounded-full bg-white dark:bg-neutral-950 border-4 border-brand-500 hidden md:block" />
 
                   <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <span className="font-mono text-xs text-brand-400">{item.period}</span>
-                    <span className="px-2 py-0.5 rounded-md bg-brand-500/10 border border-brand-500/20 font-mono text-[10px] text-brand-300">
+                    <span className="font-mono text-sm font-medium text-brand-600 dark:text-brand-400">
+                      {item.period}
+                    </span>
+                    <span className="px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-mono text-[10px] uppercase tracking-wider font-medium">
                       {item.tag}
                     </span>
                   </div>
-                  <h4 className="font-display text-lg font-bold text-gray-900 dark:text-white mb-1">
+                  <h4 className="font-display text-lg font-bold text-neutral-900 dark:text-white mb-1.5">
                     {item.title}
                   </h4>
-                  <p className="font-body text-sm text-gray-500 dark:text-gray-400">
+                  <p className="font-body text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-2xl">
                     {item.description}
                   </p>
                 </motion.div>

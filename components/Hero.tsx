@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Sparkles } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
 
 const container = {
   hidden: { opacity: 0 },
@@ -24,111 +24,75 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden noise-bg"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950 noise-bg"
     >
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-100" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-30" />
 
-      {/* Gradient orbs */}
       <div
-        className="glow-dot w-[600px] h-[600px] bg-brand-600 top-[-200px] right-[-200px]"
-        style={{ animationDelay: '0s' }}
-      />
-      <div
-        className="glow-dot w-[400px] h-[400px] bg-accent-violet bottom-[-100px] left-[-100px]"
-        style={{ animationDelay: '3s' }}
-      />
-      <div
-        className="glow-dot w-[300px] h-[300px] bg-accent-cyan top-[40%] left-[30%]"
-        style={{ animationDelay: '6s', opacity: 0.08 }}
+        className="absolute w-[600px] h-[600px] bg-brand-500/5 dark:bg-brand-600/10 rounded-full blur-[150px] top-[-150px] right-[-150px] pointer-events-none"
       />
 
-      {/* Animated rings */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {[1, 2, 3].map((i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full border border-brand-500/10"
-            style={{
-              width: `${i * 280}px`,
-              height: `${i * 280}px`,
-            }}
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 20 + i * 10,
-              repeat: Infinity,
-              ease: 'linear',
-              direction: i % 2 === 0 ? 'reverse' : 'normal',
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Content */}
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
         className="section-container relative z-10 text-center py-32"
       >
-        {/* Badge */}
         <motion.div variants={item} className="flex justify-center mb-8">
           <span
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full 
-                       glass border border-brand-500/30 
-                       font-mono text-xs text-brand-300 tracking-wider"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full 
+                       bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 
+                       font-mono text-xs text-neutral-600 dark:text-neutral-400 tracking-wider"
           >
-            <Sparkles className="w-3 h-3 text-brand-400" />
-            Disponível para novos projetos
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <Sparkles className="w-3 h-3 text-brand-500" />
+            Disponível para novos desafios
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           </span>
         </motion.div>
 
-        {/* Name */}
         <motion.h1
           variants={item}
           className="font-display text-6xl sm:text-7xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tight"
         >
-          <span className="block text-gray-900 dark:text-white">Kauan</span>
-          <span className="block gradient-text">Santos</span>
+          <span className="block text-neutral-950 dark:text-white">Kauan</span>
+          <span className="block text-neutral-950 dark:text-white">
+            Santos
+          </span>
         </motion.h1>
 
-        {/* Title */}
         <motion.p
           variants={item}
-          className="font-mono text-brand-400 text-sm md:text-base tracking-[0.3em] uppercase mb-8"
+          className="font-mono text-neutral-500 dark:text-neutral-400 text-sm md:text-base tracking-[0.3em] uppercase mb-8"
         >
-          Desenvolvedor Front-End
+          Desenvolvedor de Software Júnior
         </motion.p>
 
-        {/* Tagline */}
         <motion.p
           variants={item}
-          className="font-body text-lg md:text-xl text-gray-500 dark:text-gray-400 
+          className="font-body text-lg md:text-xl text-neutral-700 dark:text-neutral-300 
                      max-w-2xl mx-auto mb-12 text-balance leading-relaxed"
         >
           Construindo{' '}
-          <span className="text-gray-800 dark:text-gray-200 font-medium">
-            soluções digitais modernas e eficientes
-          </span>{' '}
-          — do back-end ao front-end, com foco em performance e experiência do usuário.
+          <span className="text-neutral-950 dark:text-white font-medium">
+            experiências web acessíveis e modernas
+          </span>
+          . Sempre em busca de evoluir e aplicar boas práticas de desenvolvimento.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4 mb-16">
           <motion.button
             onClick={() => scrollTo('#projects')}
-            className="btn-primary text-base px-8 py-4"
-            whileHover={{ scale: 1.03 }}
+            className="btn-primary text-base px-8 py-3.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl shadow-lg shadow-brand-500/20 transition-all"
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             Ver Projetos
-            <span className="ml-1">→</span>
+            <span className="ml-1.5">→</span>
           </motion.button>
           <motion.button
             onClick={() => scrollTo('#contact')}
-            className="btn-outline text-base px-8 py-4"
-            whileHover={{ scale: 1.03 }}
+            className="btn-outline text-base px-8 py-3.5 bg-transparent border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all"
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             Entre em Contato
@@ -145,8 +109,13 @@ export default function Hero() {
             },
             {
               icon: <Linkedin className="w-5 h-5" />,
-              href: 'https://linkedin.com/in/kauan-santos-b76829239/',
+              href: 'https://www.linkedin.com/in/kauan-santos-b76829239/',
               label: 'LinkedIn',
+            },
+            {
+              icon: <Mail className="w-5 h-5" />,
+              href: 'mailto:kauanjscardoso@gmail.com',
+              label: 'E-mail',
             },
           ].map(({ icon, href, label }) => (
             <motion.a
@@ -155,9 +124,13 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="w-11 h-11 rounded-xl glass border border-white/10 
+              className="w-11 h-11 rounded-xl 
+                         bg-neutral-50 dark:bg-neutral-900/50 
+                         border border-neutral-200 dark:border-neutral-800 
                          flex items-center justify-center
-                         text-gray-400 hover:text-brand-400 hover:border-brand-500/40
+                         text-neutral-500 dark:text-neutral-400 
+                         hover:text-brand-600 dark:hover:text-brand-400 
+                         hover:border-brand-300 dark:hover:border-brand-700
                          transition-all duration-300"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -165,16 +138,15 @@ export default function Hero() {
               {icon}
             </motion.a>
           ))}
-          <div className="w-px h-6 bg-gray-700 mx-1" />
-          <span className="font-mono text-xs text-gray-500">@kauanjsc</span>
+          <div className="w-px h-6 bg-neutral-300 dark:bg-neutral-800 mx-1" />
+          <span className="font-mono text-xs text-neutral-500">@kauanjsc</span>
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.button
         onClick={() => scrollTo('#about')}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2
-                   text-gray-400 hover:text-brand-400 transition-colors"
+                   text-neutral-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
         initial={{ opacity: 0 }}
