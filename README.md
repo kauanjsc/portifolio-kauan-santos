@@ -1,4 +1,4 @@
-# 👨‍💻 Kauan Santos — Portfólio para alocar meus projetos
+# Kauan Santos — Portfólio para alocar meus projetos
 
 Este é o repositório do meu portfólio pessoal. Desenvolvi este projeto para alocar meus projetos, tecnologias que domino e minha trajetória como dev.
 
@@ -17,7 +17,7 @@ Este é o repositório do meu portfólio pessoal. Desenvolvi este projeto para a
 - `/components`: Seções modulares (Hero, About, Projects, Experience, Contact, Header e Footer).
 - `/public`: Favicon e arquivos estáticos.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework:** Next.js 14
 - **Linguagem:** TypeScript
