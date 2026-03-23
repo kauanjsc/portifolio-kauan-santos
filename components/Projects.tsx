@@ -28,7 +28,7 @@ const projects: Project[] = [
     tags: ['Vue.js', 'FastAPI','Tailwind','PostgreSQL', 'Leaflet'],
     icon: <Shield className="w-6 h-6" />,
     featured: true,
-    deploy: 'https://teresina-acessivel-api.onrender.com',
+    deploy: 'https://sistema-acessibilidade-urbana.vercel.app/',
     github: 'https://github.com/kauanjsc/sistema-acessibilidade-urbana',
     status: 'Concluído',
   },
