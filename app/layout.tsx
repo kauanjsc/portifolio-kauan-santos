@@ -3,16 +3,17 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Kauan Santos — Desenvolvedor Full Stack',
+  title: 'Kauan Santos — Desenvolvedor de Software',
   description:
-    'Desenvolvedor Full Stack com foco em Front-End (Vue.js/Next.js). Especialista em criar interfaces modernas e acessíveis.',
+    'Desenvolvedor de Software Júnior focado em criar aplicações web modernas, acessíveis e eficientes.',
   keywords: [
-    'Desenvolvedor Front-End',
+    'Desenvolvedor de Software',
+    'Desenvolvedor Júnior',
     'Vue.js',
     'Next.js',
-    'Acessibilidade Web',
     'TypeScript',
     'FastAPI',
+    'Acessibilidade Web',
     'Tailwind CSS',
     'Kauan Santos',
   ],
@@ -21,16 +22,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://kauanjscardoso@gmail.com',
-    title: 'Kauan Santos — Front-End & Acessibilidade',
+    url: 'https://seusite.com.br', // <-- Lembre-se de colocar o link final do site aqui quando for hospedar!
+    title: 'Kauan Santos — Desenvolvedor de Software',
     description:
-      'Portfólio de Kauan Santos. Construindo soluções digitais modernas e eficientes.',
+      'Portfólio de Kauan Santos. Construindo soluções digitais acessíveis e de alto desempenho.',
     siteName: 'Kauan Santos',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kauan Santos — Desenvolvedor Full Stack',
-    description: 'Construindo soluções digitais modernas e eficientes.',
+    title: 'Kauan Santos — Desenvolvedor de Software',
+    description: 'Construindo soluções digitais acessíveis e de alto desempenho.',
     creator: '@kauanjsc',
   },
   robots: {
