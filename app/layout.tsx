@@ -3,7 +3,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Kauan Santos — Desenvolvedor de Software',
+  title: 'Kauan Santos | Dev',
   description:
     'Desenvolvedor de Software Júnior focado em criar aplicações web modernas, acessíveis e eficientes.',
   keywords: [
@@ -19,18 +19,25 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Kauan Santos' }],
   creator: 'Kauan Santos',
+  
+  icons: {
+    icon: '/favicondev2.ico',
+    shortcut: '/favicondev2.ico',
+    apple: '/favicondev2.ico',
+  },
+
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://seusite.com.br', // <-- Lembre-se de colocar o link final do site aqui quando for hospedar!
-    title: 'Kauan Santos — Desenvolvedor de Software',
+    url: 'https://portifolio-kauan-santos.vercel.app/',
+    title: 'Kauan Santos',
     description:
       'Portfólio de Kauan Santos. Construindo soluções digitais acessíveis e de alto desempenho.',
     siteName: 'Kauan Santos',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kauan Santos — Desenvolvedor de Software',
+    title: 'Kauan Santos </> Desenvolvedor Full Stack',
     description: 'Construindo soluções digitais acessíveis e de alto desempenho.',
     creator: '@kauanjsc',
   },
@@ -61,10 +68,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#080810" />
+        {/* Cor da barra de endereços no mobile (Azul Brand-500) */}
+        <meta name="theme-color" content="#0ea5e9" />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>
